@@ -3,11 +3,12 @@ import collection2 from "@/assets/collection-2.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 import { motion } from "framer-motion";
 
+const ease = [0.2, 0, 0, 1] as [number, number, number, number];
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.8, ease: [0.2, 0, 0, 1] as number[] },
+  initial: { opacity: 0, y: 20 } as const,
+  whileInView: { opacity: 1, y: 0 } as const,
+  viewport: { once: true } as const,
+  transition: { duration: 0.8, ease },
 };
 
 export default function About() {
